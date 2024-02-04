@@ -49,3 +49,24 @@ export const getVideoPageApi = async (page) => {
 
   return data.data;
 };
+
+// get chi tiết video theo id
+export const getVideoDetailApi = async (videoId) => {
+  const { data } = await axios.get(`${BASE_URL}/video/get-video-detail/${videoId}`);
+
+  return data.data;
+};
+
+// đăng ký
+export const signUpApi = async (model) => {
+  const { data } = await axios.post(`${BASE_URL}/auth/signup`, model);
+
+  return data.message;
+};
+
+// đăng nhập
+export const loginApi = async (model) => {
+  const { data } = await axios.post(`${BASE_URL}/auth/login`, model);
+
+  return data.data;
+};
